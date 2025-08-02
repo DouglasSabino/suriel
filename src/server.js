@@ -1,4 +1,5 @@
 const { httpstatuscode } = require('./util/httpstatuscode');
+const { routersReservations } = require('./routes/routesReservations');
 
 const cors = require('cors');
 const express = require('express');
@@ -13,6 +14,8 @@ app.use(
   })
 );
 app.use(cors());
+
+app.use('/reservations', routersReservations);
 
 app.get('/', (_req, res) => {
   res.status(httpstatuscode.OK).json("Tudo Certo :D");

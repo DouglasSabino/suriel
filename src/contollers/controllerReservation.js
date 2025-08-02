@@ -3,9 +3,9 @@ const { serviceReservations } = require('../services/serviceReservations');
 
 const controllerReservations = {
   /** @type {import('express').RequestParamHandler}*/
-  postUsers: async (req, res, next) => {
+  postReservations: async (req, res, next) => {
    try {
-     await serviceReservations.postReservation(req.body);
+     await serviceReservations.postReservations(req.body);
      return res.status(httpstatuscode.CREATED).json({message: "Reserva Feita Com Sucesso"});  
    } catch (error) {
     next(error);
